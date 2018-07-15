@@ -9,7 +9,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  user$: Object;
+  user$: any = {
+    name: '',
+    username: '',
+    email: '',
+    phone: ''
+  };
 
   constructor(private route: ActivatedRoute, private data: DataService) {
     this.route.params.subscribe(params => (this.user$ = params.id));
